@@ -1,0 +1,33 @@
+{
+    "name": "nirvana-msu/yii2-jsonld-helper",
+    "description": "JsonLD Helper class for Yii2",
+    "keywords": [
+        "yii2",
+        "JsonLD"
+    ],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/nirvana-msu/yii2-jsonld-helper/issues",
+        "source": "https://github.com/nirvana-msu/yii2-jsonld-helper"
+    },
+    "authors": [
+        {
+            "name": "Alexander Stepanov",
+            "email": "student_vmk@mail.ru"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "nirvana\\jsonld\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
