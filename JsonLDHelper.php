@@ -87,7 +87,7 @@ class JsonLDHelper extends Object
         // We need to register it with "application/ld+json" script type, which is not possible with registerJs(),
         // so passing to layout where it can be registered via JsonLDHelper::registerScripts() using Html::script
         $view = Yii::$app->getView();
-        $view->params['jsonld'][] = json_encode($compacted, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        $view->params['jsonld'][] = json_encode($compacted, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
     }
 
     /**
