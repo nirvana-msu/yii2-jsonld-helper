@@ -36,6 +36,14 @@ $doc = (object)[
 JsonLDHelper::add($doc);
 ```
 
+You may  pass `$context` as an optional second parameter if you need to use something other than default `["@vocab" => "http://schema.org/"]`:
+
+```php
+JsonLDHelper::add($doc, $context);
+```
+
+Note that doing so may cause resulting script to not pass validation by the Google's [SDTT] (https://search.google.com/structured-data/testing-tool) - refer this this [stackoverflow question](http://stackoverflow.com/questions/35879351/google-structured-data-testing-tool-fails-to-validate-type-as-an-alias-of-type) for details.
+
 You can also use `JsonLDHelper::addBreadcrumbList` to add `BreadcrumbList` schema.org markup 
 based on the application view `breadcrumbs` parameter. E.g. in the beginning of your layout add:
 
