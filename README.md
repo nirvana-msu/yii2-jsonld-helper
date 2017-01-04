@@ -61,6 +61,32 @@ Finally, you must invoke `JsonLDHelper::registerScripts` method in the `<head>` 
 </head>
 ```
 
+###Example with nested data:
+
+```php
+$doc = [
+    "@type" => "http://schema.org/BlogPosting",
+    "http://schema.org/mainEntityOfPage" => (object)[
+        "@type" => "http://schema.org/WebPage",
+        "@id" => "http://example.com/awesome-blog-post",
+    ],
+    "http://schema.org/headline" => "Post Title",
+    "http://schema.org/articleBody" => "Post Body",
+    "http://schema.org/author" => (object)[
+        "@type" => "http://schema.org/Person",
+        "http://schema.org/name" => "Jon Snow",
+        "http://schema.org/url" => "http://example.com",
+        "http://schema.org/sameAs" => [
+            "https://www.instagram.com/kitharingtonn/",
+        ]
+    ],
+];
+
+JsonLDHelper::add($doc);
+```
+
+Note that this extension is just a thin wrapper around [lanthaler/JsonLD](https://github.com/lanthaler/JsonLD) processor - refer to this library for the full documentation.
+
 ##License
 
 Extension is released under MIT license.
